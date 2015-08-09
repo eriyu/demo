@@ -13,8 +13,14 @@
   function getVersion(btn){
     var $injector = angular.element(btn).injector();
     var version = $injector.get("version");
-    console.log("按下button==>",version);
+    console.log("按下「點我取得版本」==> ",version);
   }
+  function getPName(btn){
+    var $scope = angular.element(btn).scope();
+    var pname = $scope.m.PName;
+    //alert($scope.m.PName);
+    console.log("按下「點我取得商品名稱」==> ",pname);
+  }  
 </script>
 <style type="text/css">
 .even {background-color: #DDD;}
@@ -37,6 +43,7 @@
   <br>
   <button ng-click="m.add()">加入購物車</button>
   <button ng-click="m.carts=[]">清空購物車</button>
+  <button onClick="getPName(this)">點我取得商品名稱</button>
   <br><br>
   <label><input type="checkbox" ng-model="m.IsDebug"> 啟用偵錯</label>
   <pre ng-show="m.IsDebug" ng-bind="m.carts|json"></pre>

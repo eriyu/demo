@@ -1,6 +1,11 @@
 var app = angular.module("app",[]);
 
-app.controller("MainCtrl",MainCtrl);
+app.config(['$controllerProvider',function($controllerProvider) {
+  $controllerProvider.allowGlobals();
+  console.log("controllerProvider set ok");
+}]);
+
+//app.controller("MainCtrl",MainCtrl);
 
 function MainCtrl() {
   var vm = this;

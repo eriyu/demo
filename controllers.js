@@ -8,8 +8,13 @@
 
 	function MainCtrl(version,$cookies) {
 	  var vm = this;
-	  //vm.version = version;
+	  var counter = 0;
+	  
 	  vm.last_url = $cookies.get('last_url');
+
+	  vm.debug = function(){
+	  	console.log("counter ==>",counter++);
+	  };
 	  
 	  //vm.IsDebug = false;
 	  

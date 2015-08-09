@@ -26,6 +26,7 @@
 <body ng-app="app" ng-controller="MainCtrl as m">
   版本:{{version}}
   <hr>
+  {{ m.debug() }}
   <button onClick="getVersion(this)">點我取得版本</button>
   <hr>
   商品名稱: <input type="text" ng-model="m.PName"><br>

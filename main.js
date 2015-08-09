@@ -1,8 +1,15 @@
 var app = angular.module("app",[]);
 
+app.value("version","1.0.0");
+
 app.config(['$controllerProvider',function($controllerProvider) {
   $controllerProvider.allowGlobals();
   console.log("controllerProvider set ok");
+}]);
+
+app.run(['$rootScope','version',function($rootScope,version) {
+  $rootScope.version = version;
+  console.log("run set ok");
 }]);
 
 //app.controller("MainCtrl",MainCtrl);

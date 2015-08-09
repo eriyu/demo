@@ -1,0 +1,17 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "專案程式碼參考: https://gist.github.com/doggy8088/4308431f990819fde3bb/revisions",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.2",
+    "angular-cookies": "^1.4.2",
+    "bootstrap2-umd": "^2.3.2",
+    "jquery": "^1.10.1"
+  }
+}

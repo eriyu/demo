@@ -17,9 +17,10 @@
   }
   function getPName(btn){
     var $scope = angular.element(btn).scope();
-    var pname = $scope.m.PName;
-    //alert($scope.m.PName);
-    console.log("按下「點我取得商品名稱」==> ",pname);
+    console.log("按下「點我取得商品名稱」==> ",$scope.m.PName);
+    $scope.m.PName = "Lala Buy";
+    $scope.$apply();
+    console.log("修改商品名稱 ==> ",$scope.m.PName);
   }  
 </script>
 <style type="text/css">

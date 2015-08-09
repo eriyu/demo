@@ -9,6 +9,13 @@
 <script src="main.js"></script>
 <script src="values.js"></script>
 <script src="controllers.js"></script>
+<script>
+  function getVersion(btn){
+    var $injector = angular.element(btn).injector();
+    var version = $injector.get("version");
+    console.log("按下button==>",version);
+  }
+</script>
 <style type="text/css">
 .even {background-color: #DDD;}
 .highlight {background-color: yellow;}
@@ -18,6 +25,8 @@
 </head>
 <body ng-app="app" ng-controller="MainCtrl as m">
   版本:{{version}}
+  <hr>
+  <button onClick="getVersion(this)">點我取得版本</button>
   <hr>
   商品名稱: <input type="text" ng-model="m.PName"><br>
   商品價格: <input type="number" ng-model="m.Price"><br>

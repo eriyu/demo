@@ -33,7 +33,7 @@
     // === Provider GetInstance Area Start ===
     this.$get = [function() {
       return {
-        "name":this.defaults.name
+        "name":defaults.name
       };
     }];
     // === Provider GetInstance Area End ===

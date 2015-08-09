@@ -1,11 +1,16 @@
-var app = angular.module("app",[]);
+var app = angular.module("app",["ngCookies"]);
 
 app.value("version","1.0.0");
 
-app.config(['$controllerProvider',function($controllerProvider) {
-  $controllerProvider.allowGlobals();
-  console.log("controllerProvider set ok");
-}]);
+app.config([
+  '$controllerProvider',
+  '$cookiesProvider',
+  function($controllerProvider,$cookiesProvider) {
+    $controllerProvider.allowGlobals();
+    $cookiesProvider.defaults.path = '/';
+    console.log("controllerProvider set ok");
+  }
+]);
 
 app.run(['$rootScope','version',function($rootScope,version) {
   $rootScope.version = version;
@@ -14,8 +19,10 @@ app.run(['$rootScope','version',function($rootScope,version) {
 
 //app.controller("MainCtrl",MainCtrl);
 
-function MainCtrl() {
+function MainCtrl($cookies) {
   var vm = this;
+
+  vm.last_url = $cookies.get('last_url');
   
   //vm.IsDebug = false;
   

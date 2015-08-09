@@ -34,6 +34,8 @@
   版本:{{version}}
   <hr>
   {{ m.debug() }}
+  {{ m.item | json}}
+  <hr>
   <button onClick="getVersion(this)">點我取得版本</button>
   <hr>
   商品名稱: <input type="text" ng-model="m.PName"><br>

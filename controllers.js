@@ -4,13 +4,15 @@
 
 	var app = angular.module("app");
 
-	app.controller('MainCtrl',["version","$cookies",MainCtrl]);
+	app.controller('MainCtrl',["version","$cookies","Item",MainCtrl]);
 
-	function MainCtrl(version,$cookies) {
+	function MainCtrl(version,$cookies,Item) {
 	  var vm = this;
 	  var counter = 0;
 	  
 	  vm.last_url = $cookies.get('last_url');
+
+	  vm.item = Item;
 
 	  vm.debug = function(){
 	  	console.log("counter ==>",counter++);

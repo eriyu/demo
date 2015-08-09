@@ -22,6 +22,8 @@
   //$injector.get就是使用$provider的$get取得服務的實體
   app.provider('Item', [function () {
     // === Provider Config Area Start ===
+
+    //使用defaults是一種習慣，避免this的誤用
     var defaults = this.defaults = {};
     //vm.myname = "Will";
     
